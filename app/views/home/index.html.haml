@@ -1,44 +1,40 @@
-.grid-x
-  .cell
-    %a{id: "story"}
-    .h1 Our Story
-    %p We met when working for iTriage and both played for the company's recreational ultimate frisbee team. Alex had been playing since high school and Lisa was recruited because the coed team needed more women. Lisa is still terrible at frisbee to this day.
-    %br
-    %p We started becoming better friends and getting to know each other more. One day, Lisa asked Alex “how do you feel about the movie the Expendables?” And Alex mentioned how much he loved a good action movie. Lisa asked him out the next weekend.
+.hero-section
+  .hero-section-text
+    %h1 Our Wedding
+    %h5 We are sexy
 
-    %br
-    %p We started dating in October 2014 and currently enjoy their life in Denver. You can find them tending to their garden and beehives in the summer, and skiing or seeing a Broadway show in winter.
+.grid-x.grid-padding-x{style: "margin: 30px 20px 0px 20px"}
+  .cell.small-12.medium-4.text-center
+    .card
+      .card-section
+        = image_tag 'mountain-lodge.jpg', class: "card-image"
+      .card-section
+        %h3 Wedding Information
+        %p
+          August 25
+          %sup
+            th
+          &nbsp;at The Mountain Lodge
+        %a{href: '/wedding'}
+          .button.hollow.large Learn More
 
+  .cell.small-12.medium-4.text-center
+    .card
+      .card-section
+        = image_tag 'mountain-lodge.jpg', class: "card-image"
+      .card-section
+        %h3 Our Story
+        %p Learn how we met.
+        %a{href: '/story'}
+          .button.hollow.large Learn More
+  .cell.small-12.medium-4.text-center
+    .card
+      .card-section
+        = image_tag 'telluride-valley.jpg', class: "card-image"
+      .card-section
+        %h3 Prepare for your trip
+        %p Preparing for altitude and other things to do in Colorado.
+        %a{href: '/altitude'}
+          .button.hollow.large Learn More
 
-.grid-x
-  .cell
-    %a{id: "about"}
-    .h1 About the Wedding
-    %p
-      We’re getting married on August 25th, 2019, at the
-      %a{href: "https://www.mountainlodgetelluride.com/suites"}Mountain Lodge
-      near Telluride, CO.
-    %br
-    %p
-      We have a block of rooms reserved with the Mountain Lodge - please contact Sam Barnes at sbarnes@mountainlodgetelluride.com or book online with the code
-      %em“VANARSDALE”
-
-
-.grid-x
-  .cell
-    %a{id: "altitude"}
-    .h1 Preparing for High Altitude
-    %p We will have our wedding in Mountain Village, which is 9,545’ in elevation. Here’s some tips on how to make sure your stay isn’t as affected by the altitude.
-    %br
-    %ul
-      %li
-        %p If you can, stay at a lower altitude for a night. Here are some places we recommend:
-        %ol
-          %li Ridgeway, CO - Not far from Montrose airport, there are some good economical options to stay the night, with a super cute downtown and a great place to grab food: http://www.provisionschef.com/
-          %li Palisades, CO - Good halfway point from Denver to Telluride if you want to break up the drive. There are a bunch of wineries here, and the wine is nothing super notable. However, the peaches are famous in the state (I’m super selling this one), and totally worth getting.
-          %li Denver, CO - Lisa and Alex live here, and are happy to recommend places to stay and things to do
-          %li Colorado Springs, CO - this is where Lisa grew up and her parents still live here
-          %li Boulder, CO - crunch on granola, watch some street performers on Pearl Street, and see if you can catch anyone saying anything found on this blog: https://stayoutofmynamastespace.com/
-        %li Drink a lot of water, and take it easy on your first night in Telluride. If at any point you start to feel dizzy, sit down, have some water and get some form of salt into your system.
-        %li Watch your alcohol! One beer may feel fine for you at sea level, but one beer at altitude may make you tipsy. Ease into the drinking.
 

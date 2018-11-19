@@ -8,24 +8,22 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = csrf_meta_tags
-  %body
-    .top-bar
-      .top-bar-left
-        %ul.dropdown.menu{"data-dropdown-menu" => ""}
-          %li.menu-text Wedding
-          %li
-            %a{:href => "#story"} Our Story
-          %li
-            %a{:href => "#about"} About the Wedding
-          %li
-            %a{:href => "#altitude"} Prepairing for Altitude
-      .top-bar-right
-        %ul.menu
-          %li
-            %input{:placeholder => "RSVP Code", :type => "search"}
-          %li
-            %button.button{:type => "button"} RSVP
-
-    .grid-x.grid-padding-x
-      .cell
-        = yield
+  %body{style: "background-color: #cfd9ea"}
+    %nav.top-bar.topbar-responsive
+      .top-bar-title
+        %span{"data-hide-for" => "medium", "data-responsive-toggle" => "topbar-responsive"}
+          %button.menu-icon.hide-for-medium{"data-toggle" => "", :type => "button"}
+        %a.topbar-responsive-logo{:href => "/"}
+          %strong O'Rielly & VanArsdale Wedding
+      #topbar-responsive.topbar-responsive-links
+        .top-bar-right
+          %ul.menu.simple.vertical.medium-horizontal
+            %li
+              %a{:href => "/story"} Our Story
+            %li
+              %a{:href => "/wedding"} Mountain Lodge
+            %li
+              %a{:href => "/altitude"} Preparing for altitude
+            %li
+              %button.button.hollow.topbar-responsive-button{:type => "button"} RSVP
+    = yield
