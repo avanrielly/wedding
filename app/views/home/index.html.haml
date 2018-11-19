@@ -1,27 +1,25 @@
 .hero-section
   .hero-section-text
-    %h1 Our Wedding
-    %h5 We are sexy
+    %h1 Welcome to Lisa and Alex's Wedding
+    %h5 August 25, 2019
 
 .grid-x.grid-padding-x{style: "margin: 30px 20px 0px 20px"}
   .cell.small-12.medium-4.text-center
     .card
+      = image_tag 'mountain-lodge.jpg', class: "card-image"
       .card-section
-        = image_tag 'mountain-lodge.jpg', class: "card-image"
-      .card-section
-        %h3 Wedding Information
+        %h3 More About the Wedding
         %p
           August 25
           %sup
             th
-          &nbsp;at The Mountain Lodge
+          &nbsp;at The Mountain Lodge in Telluride, CO
         %a{href: '/wedding'}
           .button.hollow.large Learn More
 
   .cell.small-12.medium-4.text-center
     .card
-      .card-section
-        = image_tag 'mountain-lodge.jpg', class: "card-image"
+      = image_tag 'mountain-lodge.jpg', class: "card-image"
       .card-section
         %h3 Our Story
         %p Learn how we met.
@@ -29,8 +27,7 @@
           .button.hollow.large Learn More
   .cell.small-12.medium-4.text-center
     .card
-      .card-section
-        = image_tag 'telluride-valley.jpg', class: "card-image"
+      = image_tag 'telluride-valley.jpg', class: "card-image"
       .card-section
         %h3 Prepare for your trip
         %p Preparing for altitude and other things to do in Colorado.

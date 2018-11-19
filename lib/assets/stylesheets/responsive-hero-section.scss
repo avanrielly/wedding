@@ -2,6 +2,8 @@ $hero-height: 60vh;
 
 .hero-section {
   background: url('hero.jpg') no-repeat;
+  background-position: right top;
+
   background-size: cover;
   height: $hero-height;
   text-align: center;

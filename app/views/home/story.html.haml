@@ -1,10 +1,44 @@
-.card
-  .card-section
-    %a{id: "story"}
-    .h1 Our Story
-    %p We met when working for iTriage and both played for the company's recreational ultimate frisbee team. Alex had been playing since high school and Lisa was recruited because the coed team needed more women. Lisa is still terrible at frisbee to this day.
-    %br
-    %p We started becoming better friends and getting to know each other more. One day, Lisa asked Alex “how do you feel about the movie the Expendables?” And Alex mentioned how much he loved a good action movie. Lisa asked him out the next weekend.
+%div{style: "margin: 20px 20px 0px 20px"}
+  .card
+    .card-section
+      .h1 Our Story
+      %p We met when working for iTriage and both played for the company's recreational ultimate frisbee team. Alex had been playing since high school and Lisa was recruited because the coed team needed more women. Lisa is still terrible at frisbee to this day.
+      %br
+      %p We started becoming better friends and getting to know each other more. One day, Lisa asked Alex “how do you feel about the movie the Expendables?” And Alex mentioned how much he loved a good action movie. Lisa asked him out the next weekend.
 
-    %br
-    %p We started dating in October 2014 and currently enjoy their life in Denver. You can find them tending to their garden and beehives in the summer, and skiing or seeing a Broadway show in winter.
+      %br
+      %p We started dating in October 2014 and currently enjoy their life in Denver. You can find them tending to their garden and beehives in the summer, and skiing or seeing a Broadway show in winter.
+  .card
+    .card-section
+      %a{id: "pictures"}
+      .h1 Pictures
+    .card-section
+      .grid-x.grid-margin-x
+        .cell.medium-3
+          = image_tag 'mountain-lodge.jpg', class: 'thumbnail gallery cursor', "data-open" => "modal", "data-title" => "The View Restaurant", "data-details" => "This is the interior of the View Restaraunt, in the Mountain Lodge, looking out towards the mountains"
+        .cell.medium-3
+          = image_tag 'mountain-lodge.jpg', class: 'thumbnail gallery cursor', "data-open" => "modal"
+        .cell.medium-3
+          = image_tag 'mountain-lodge.jpg', class: 'thumbnail gallery cursor', "data-open" => "modal"
+        .cell.medium-3
+          = image_tag 'mountain-lodge.jpg', class: 'thumbnail gallery cursor', "data-open" => "modal"
+
+#modal.reveal.large.text-center{"data-reveal" => ""}
+  .grid-x
+    .cell.medium-3
+      %h3#reveal-title
+      %p#reveal-details
+    .cell.medium-9
+      %img#reveal-image
+  %button.close-button{"aria-label" => "Close modal", "data-close" => "", :type => "button"}
+    %span{"aria-hidden" => "true"} &#215;
+
+:javascript
+  $(document).on('turbolinks:load', function(){
+    $('.gallery').on('click', function(){
+      $('#reveal-image').attr('src', $(this).attr("src"));
+      $('#reveal-title').text($(this).attr("data-title"));
+      $('#reveal-details').text($(this).attr("data-details"));
+    });
+  });
+
