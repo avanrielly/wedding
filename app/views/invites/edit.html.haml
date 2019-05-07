@@ -1,0 +1,14 @@
+%div{style: "margin: 20px 20px 0px 20px"}
+  = form_for @invite do |f|
+    = f.label :confirmed, "Will you be attending?"
+    = f.radio_button :confirmed, :true
+    = f.label :yes
+    = f.radio_button :confirmed, :false
+    = f.label :no
+    = f.label :invites, "You have #{@invite.invites} total invites.  How many are coming?"
+    = f.text_field :coming
+    = f.label :people, "Who is coming to the wedding?"
+    = f.text_area :people, rows: 4
+    = f.label :comments
+    = f.text_area :comments, rows: 6
+    = f.submit :Submit

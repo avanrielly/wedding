@@ -24,6 +24,9 @@
               %a{:href => "/wedding"} Mountain Lodge
             %li
               %a{:href => "/altitude"} Travel Tips
-            / %li
-            /   %button.button.hollow.topbar-responsive-button{:type => "button"} RSVP
+    - flashes = {notice: 'success', alert: 'alert'}
+    - flashes.each do |key, value|
+      - if flash[key]
+        .callout{class: value, data: { alert: '' } }
+          = flash[key]
     = yield
