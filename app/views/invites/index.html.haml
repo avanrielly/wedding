@@ -1,5 +1,12 @@
-%div{style: "margin: 20px 20px 0px 20px"}
-  = form_tag :invites, method: :get do
-    = label_tag :email, "Email Address"
-    = text_field_tag :email
-    = submit_tag "Submit", class: "button large"
+.grid-x.grid-margin-x{style: "margin: 20px 20px 0px 20px"}
+  .cell.small-12.medium-8.medium-offset-2
+    .card
+      .card-section
+        %h3 Look up your invitation by your email.
+        %p
+          It will be the same email used for the save the date.
+        .grid-x.grid-margin-x
+          .cell.small-6.medium-6
+            = form_tag :invites, method: :get do
+              = text_field_tag :email, nil, placeholder: "Email Address"
+              = submit_tag "Submit", class: "button large"
