@@ -3,8 +3,13 @@
     .card
       .card-section
         %h3 Please fill out the fields below to RSVP.
-        %p
-          If you are not coming, you only have to fill out the first question.
+        %h4 Notes about the RSVP
+        %ul
+          %li
+            We are sorry to inform you that this wedding will be a child free event. If you would like to bring them for a family vacation you will be expected to find child care for the night of the wedding.
+          %li We tried to invite as many people as we could.  The amount of invites you have are below. Our venue does not have room for any extra people.
+          %li
+            If you are not coming, you only have to fill out the first question.
         .grid-x.grid-margin-x
           .cell
             = form_for @invite do |f|
@@ -13,7 +18,7 @@
               = f.label :yes
               = f.radio_button :confirmed, :false
               = f.label :no
-              = f.label :invites, "You have #{@invite.invites} total invites.  How many are coming?"
+              = f.label :invites, "You have <b>#{@invite.invites}</b> total invites.  How many are coming?".html_safe
               = f.text_field :coming
               = f.label :people, "Who is coming to the wedding? This is helpful so we can create place cards."
               = f.text_area :people, rows: 4
