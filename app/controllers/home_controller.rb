@@ -9,6 +9,8 @@ class HomeController < ApplicationController
       render 'altitude'
     elsif request.path == '/wedding'
       render 'wedding'
+    elsif request.path == '/registry'
+      render 'registry'
     end
   end
 end
