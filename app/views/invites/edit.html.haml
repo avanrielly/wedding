@@ -6,10 +6,9 @@
         %h4 Notes about the RSVP
         %ul
           %li
-            We are sorry to inform you that this wedding will be a child free event. If you would like to bring them for a family vacation you will be expected to find child care for the night of the wedding.
-          %li We tried to invite as many people as we could.  The amount of invites you have are below. Our venue does not have room for any extra people.
+            While little ones are welcome in Telluride, we will be having a child-free wedding and reception on Sunday. Reach out to us if you have any concerns or need help finding child care.
           %li
-            If you are not coming, you only have to fill out the first question.
+            If you were expecting more members of your party than what is listed, please contact us directly before RSVPing. Space is limited in the venue, and our wedding is not clown-car themed.
         .grid-x.grid-margin-x
           .cell
             = form_for @invite do |f|
@@ -18,10 +17,20 @@
               = f.label :yes
               = f.radio_button :confirmed, :false
               = f.label :no
-              = f.label :invites, "You have <b>#{@invite.invites}</b> total invites.  How many are coming?".html_safe
-              = f.text_field :coming
-              = f.label :people, "Who is coming to the wedding? This is helpful so we can create place cards."
-              = f.text_area :people, rows: 4
-              = f.label :comments, "Please post any additional needs or comments here."
-              = f.text_area :comments, rows: 6
-              = f.submit :Submit, class: "button large"
+              #hidden{style: 'display: none'}
+                = f.label :invites, "You have <b>#{@invite.invites}</b> total invites.  How many are coming?".html_safe
+                = f.text_field :coming
+                = f.label :people, "Who is coming to the wedding? This is helpful so we can create place cards."
+                = f.text_area :people, rows: 4
+                = f.label :comments, "Please post any additional needs or comments here."
+                = f.text_area :comments, rows: 6
+              %div
+                = f.submit :Submit, class: "button large"
+:javascript
+  $('#invite_confirmed_true').on('click', function(){
+    $('#hidden').css('display', 'block');
+  });
+
+  $('#invite_confirmed_false').on('click', function(){
+    $('#hidden').css('display', 'none');
+  });
