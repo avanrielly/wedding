@@ -2,7 +2,7 @@ class InvitesController < ApplicationController
   require 'csv'
   def index
     if params[:email]
-      invite = Invite.joins(:guests).find_by(guests: {email: params[:email]})
+      invite = Invite.joins(:guests).find_by(guests: {email: params[:email].downcase})
       if invite
         redirect_to edit_invite_path(invite)
       else
