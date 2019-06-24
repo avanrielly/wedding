@@ -8,13 +8,13 @@
               Coming
             .cell.small-2
               = @coming.sum{|invite| invite.coming}
-        .grid-x.grid-margin-x
-          - @coming.each do |invite|
-            .cell.small-2
+        - @coming.each do |invite|
+          .grid-x.grid-margin-x{style: "border-top: 1px solid #e2e2e2"}
+            .cell.small-3
               = invite.guests.first.name
             .cell.small-1
               = invite.coming
-            .cell.small-4
+            .cell.small-3
               = invite.people&.gsub("\r\n", '<br />')&.gsub("\n", '<br />')&.html_safe
             .cell.small-5
               = invite.comments
