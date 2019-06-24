@@ -23,7 +23,7 @@ class InvitesController < ApplicationController
     end
     if @invite.update_attributes(invite_params)
       flash.notice = "You have successfully RSVP'd."
-      redirect_to edit_invite_path(@invite)
+      redirect_to root_path
     else
       flash.alert = "There was an error saving your RSVP.  Please contact us."
       redirect_to edit_invite_path(@invite)
@@ -43,5 +43,11 @@ class InvitesController < ApplicationController
       end
       invite = Invite.create(invites: row["invites"], guests: guests)
     end
+  end
+
+  def results
+    @coming = Invite.includes(:guests).where(confirmed: true)
+    @declined = Invite.where(confirmed: false).includes(:guests)
+    @undecided = Invite.where(confirmed: nil).includes(:guests)
   end
 end

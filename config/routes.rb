@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     collection do
       get :import
       post :batch
+      get :results
     end
   end
   root "home#index"

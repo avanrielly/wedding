@@ -1,0 +1,52 @@
+.grid-x.grid-margin-x{style: "margin: 20px 20px 0px 20px"}
+  .cell.small-12.medium-8.medium-offset-2
+    .card
+      .card-section
+        %h3
+          .grid-x.grid-margin-x
+            .cell.small-10
+              Coming
+            .cell.small-2
+              = @coming.sum{|invite| invite.coming}
+        .grid-x.grid-margin-x
+          - @coming.each do |invite|
+            .cell.small-2
+              = invite.guests.first.name
+            .cell.small-1
+              = invite.coming
+            .cell.small-4
+              = invite.people&.gsub("\r\n", '<br />')&.gsub("\n", '<br />')&.html_safe
+            .cell.small-5
+              = invite.comments
+    .card
+      .card-section
+        %h3
+          .grid-x.grid-margin-x
+            .cell.small-10
+              Declined
+            .cell.small-2
+              = @declined.sum{|invite| invite.invites}
+        .grid-x.grid-margin-x
+          - @declined.each do |invite|
+            .cell.small-5
+              = invite.guests.first.name
+            .cell.small-5
+              = invite.guests.first.email
+            .cell.small-2
+              = invite.invites
+    .card
+      .card-section
+        %h3
+          .grid-x.grid-margin-x
+            .cell.small-10
+              Undecided
+            .cell.small-2
+              = @undecided.sum{|invite| invite.invites}
+        .grid-x.grid-margin-x
+          - @undecided.each do |invite|
+            .cell.small-5
+              = invite.guests.first.name
+            .cell.small-5
+              = invite.guests.first.email
+            .cell.small-2
+              = invite.invites
