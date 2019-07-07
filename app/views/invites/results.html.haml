@@ -7,7 +7,7 @@
             .cell.small-10
               Coming
             .cell.small-2
-              = @coming.sum{|invite| invite.coming}
+              = @coming.sum{|invite| invite.coming.to_i }
         - @coming.each do |invite|
           .grid-x.grid-margin-x{style: "border-top: 1px solid #e2e2e2"}
             .cell.small-3
