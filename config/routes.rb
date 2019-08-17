@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get :altitude, to: 'home#view'
   get :wedding, to: 'home#view'
   get :registry, to: 'home#view'
+  get :weekend, to: 'home#view'
   resources :invites do
     collection do
       get :import
